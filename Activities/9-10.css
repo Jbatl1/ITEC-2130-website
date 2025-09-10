@@ -1,0 +1,71 @@
+#office {
+    width: 800px;
+    height: 600px;
+    background-color: #57ba98;
+    color: #f2f2f2;
+    padding: 100px;
+    border: 30px dashed #182628;
+    margin: 100px;
+    overflow: scroll;
+    background-image: url(../Images/dots.png);
+    background-clip: border-box;
+}
+#desk {
+    width: 300px;
+    height: 300px;
+    background-color: #f2f2f2;
+    color: #3b945e;
+    padding: 10px;
+    border: 10px outset #eee887;
+    margin: 0;
+    float: right;
+    background-image: url(../Images/grizzly.jpg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-origin: content-box;
+}
+p {
+    background-color: #eee887;
+    color: #3b945e;
+    width: 100px;
+    height: 100px;
+    border: 5px outset #f2f2f2;
+    position: fixed;
+}
+h2 {
+    background-color: #f2f2f2;
+    color: #3b945e;
+    text-align: center;
+    clear: right;
+}
+ul {
+    padding: 0;
+}
+li {
+    display: inline-block;
+    background-color: #f2f2f2;
+    color: #3b945e;
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    margin: 5px;
+}
+* {
+    box-sizing: border-box;
+}
+#book1 {
+    background-color: aquamarine;
+    color: #182628;
+    position: relative;
+    float: right;
+}
+#book2 {
+    background-color: saddlebrown;
+    color: #eee887;
+    position: relative;
+}
+#book3 {
+    background-color: chartreuse;
+    color: #121af6;
+    position: relative;
+}

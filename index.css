@@ -6,12 +6,18 @@
 #A0FF00     Toxic Glow
 */
 
+body {
+    text-align: center;
+    background-image: url(Images/orangeCrackedBackground.jpg);
+}
 header {
     text-align: center;
     background-color: #3C3C3C;
     margin: 0;
     height: 50px;
     color: #A0FF00;
+    width: 80%;
+    margin: 0 auto;
 }
 nav {
     margin: 0;
@@ -24,11 +30,13 @@ nav {
     height: 30px;
 }
 nav div {
+    background-color: #0A0A0A;
     width: 25%;
     height: 88%;
     border-color: #FF4E00;
     border-width: 2px;
     border-style:solid;
+    color: #FF4E00;
 }
 nav div:hover {
     background-color: #FF4E00;
@@ -36,6 +44,10 @@ nav div:hover {
 }
 nav a {
     display: block;
-    margin: 2%;
-    color: #FF4E00;
+}
+#mainDiv {
+    width: 80%;
+    height: 2000px;
+    background-color: #0A0A0A;
+    margin: 0 auto;
 }
