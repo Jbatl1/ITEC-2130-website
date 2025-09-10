@@ -1,0 +1,117 @@
+            body {
+                background-color: #f2f2f2;
+                color: #182628;
+                font-family: Arial, Verdana, sans-serif;
+                background-image: url(../Images/dots.png);
+                background-repeat: repeat-x;
+                background-attachment: fixed;
+
+            }
+            h1 {
+                background-color: #65ccb8; 
+                color: #f2f2f2;
+                font-family: Georgia, 'Times New Roman', serif;
+                text-align: center;
+                word-spacing: 2em;
+                line-height: 200%;
+                text-shadow: 5px 4px 5px #182628;
+                border-width: 3px;
+                border-style: ridge;
+                border-color: #cccccc;
+                background-image: url(../Images/design.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: right;
+                border-radius: 50px;
+                opacity: .9;
+            }
+            h2 {
+                background-color: #65ccb8;
+                color: #182628;
+                font-family: Georgia, 'Times New Roman', serif;
+                text-align: center;
+                line-height: 150%;
+                text-shadow: 5px 4px 5px #f2f2f2;
+                border-bottom: 2px dashed #191970;
+                padding-top: 10px;
+                padding-bottom: 5px;
+                background-image: linear-gradient(to bottom, #ffffff, #65ccb8);
+                border-top-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+            }
+            p {
+                font-size: 1.2em;
+                text-indent: 3em;
+            }
+            footer {
+                font-size: o.8em;
+                font-style: italic;
+                color: #3b945e;
+                text-align: center;
+            }
+            nav {
+                text-align: center;
+                font-weight: bold;
+                padding: 15px;
+                background-image: radial-gradient(#ffffff, #65ccb8);
+                border-radius: 50px;
+                opacity: .7;
+            }
+            dt {
+                font-weight: bold;
+                letter-spacing: 3px;
+                text-decoration: underline;
+            }
+            .Services {
+                color: #3b945e;
+            }
+            #Phone {
+                font-weight: bold;
+                font-style: italic;
+                color: #3b945e;
+            }
+            span {
+                font-style: italic;
+                color: #3b945e;
+            }
+            figure {
+                width: 350px;
+                height: 200px;
+                display: block;
+                margin: auto;
+                border: 1px solid #000000;
+                padding: 5px;
+                border-bottom-left-radius: 30px;
+                border-bottom-right-radius: 30px;
+            }
+            img {
+                width: 100%;
+                height: 90%;
+            }
+            figcaption {
+                text-align: center;
+                font-family: Papyrus, fantasy;
+            }
+            #Wrapper {
+                width: 960px;
+                margin: auto;
+                box-shadow: 5px 5px 5px #1e1e1e;
+                background: url(../Images/web-icon.png) no-repeat left bottom, 
+                            url(../Images/web-icon.png) no-repeat right bottom;
+                            background-size: 100px 100px;
+            }
+            #Address {
+                font-weight: bold;
+                background-image: url(../Images/address.png);
+                background-repeat: no-repeat;
+
+            }
+            #Dfig {
+                border: 5px #65ccb8;
+                border-radius: 30px;
+                border-style: double;
+                padding: 10px;
+            }
+            #DfigCaption {
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }

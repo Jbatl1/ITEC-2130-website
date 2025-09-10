@@ -1,0 +1,41 @@
+/*
+#0A0A0A     Wasteland Black
+#FF4E00     Zombie Ember
+#3C3C3C     Ashen Gray
+#5A2E0C     Decay Brown
+#A0FF00     Toxic Glow
+*/
+
+header {
+    text-align: center;
+    background-color: #3C3C3C;
+    margin: 0;
+    height: 50px;
+    color: #A0FF00;
+}
+nav {
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0A0A0A;
+    height: 30px;
+}
+nav div {
+    width: 25%;
+    height: 88%;
+    border-color: #FF4E00;
+    border-width: 2px;
+    border-style:solid;
+}
+nav div:hover {
+    background-color: #FF4E00;
+    color: #0A0A0A;
+}
+nav a {
+    display: block;
+    margin: 2%;
+    color: #FF4E00;
+}

@@ -1,0 +1,60 @@
+body {
+    color: #666666;
+    background-image: url(../Images/background.jpg);
+    padding: 25px;
+}
+header {
+    color: white;
+}
+h1 {
+    background-color: #000033;
+    background-image: url(../Images/sunset.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    margin: 0;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+
+h2 {
+    color: #3399CC;
+}
+
+
+nav{
+    padding-top: 10px;
+    padding-left: 5px;
+    background-color: #90C7E3;
+}
+
+span{
+    color: #000033;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
+}
+
+#wrapper {
+    background-color: white;
+    box-shadow: 3px 3px 3px #333333
+}
+
+#coastImage {
+    width: 100%;
+    margin: 0;
+}  
+
+#coastImage img{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+#belowImage {
+    padding-left: 5px;
+}
