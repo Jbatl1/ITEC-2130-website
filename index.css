@@ -9,6 +9,8 @@
 body {
     text-align: center;
     background-image: url(Images/orangeCrackedBackground.jpg);
+    border-style: solid;
+    box-shadow: 2px 2px 5px #3C3C3C
 }
 header {
     text-align: center;
@@ -47,7 +49,55 @@ nav a {
 }
 #mainDiv {
     width: 80%;
-    height: 2000px;
     background-color: #0A0A0A;
     margin: 0 auto;
+}
+h2 {
+    color: #A0FF00;
+    border-color: #3C3C3C;
+    border-style: solid;
+    border-bottom: none;
+}
+#indexList {
+    border-color: #3C3C3C;
+    border-style: solid;
+    border-top: none;
+    color: #FF4E00;
+    text-align: center;
+    margin: 0;
+    padding: 40%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+dl {
+    padding: 10px;
+    color: #FF4E00;
+    border-color: #3C3C3C;
+    border-style: solid;
+    border-top: none;
+}
+dt {
+    color: #A0FF00;
+}
+ul {
+    list-style-image: url(Images/raygun.png);
+}
+footer p {
+    color: #A0FF00;
+    background-color: #0A0A0A;
+    width: 250px;
+    margin: auto;
+    margin-top: 5em;
+}
+#activities {
+    background-color: #0A0A0A;
+    padding: 10px;
+    margin: 0 auto;
+    width: 5%;
+    border-color: #A0FF00;
+    border-style: solid;
+
+}
+#labs {
+    background-color: #0A0A0A;
 }
