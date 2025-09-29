@@ -1,0 +1,92 @@
+#wrapper {
+    width: 90%;
+    margin: auto;
+    box-shadow: 5px 5px 5px #1e1e1e;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    flex: 2;
+}
+#middle {
+    flex: 7;
+    display: flex;
+    flex-direction: row;
+}
+nav {
+    flex: 2;
+    padding: 10px;
+}
+main {
+    flex: 6;
+}
+aside {
+    flex: 2;
+    color: #3b945e;
+    padding: 10px;
+}
+#box1, #box2 {
+    margin: 10px;
+    width: 95%;
+    height: 300px;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+}
+aside iframe {
+    height: 150px;
+}
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    font-style: italic;
+    flex: 1;
+}
+
+/* Re-use code from 9-22.css*/
+h1,h2 {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+    background-color: #3b945e;
+    border-bottom: 1px solid #f2f2f2;
+    background-image: url(../Images/sprites.gif);
+    background-repeat: no-repeat;
+    background-position: right 0;
+}
+nav a:link {
+    color: #f2f2f2;
+}
+nav a:visited {
+    color: #ff0000;
+}
+nav a:hover {
+    color: #0000ff;
+    background-color: #eaeaea;
+    background-position: right -100px;
+}
+aside h3 {
+    border-bottom: 1px solid #f2f2f2;
+    text-align: center;
+    padding-bottom: 2px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+picture {
+    display: block;
+    margin: auto;
+}
