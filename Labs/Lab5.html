@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5</title>
+    <link rel="stylesheet" href="Lab5.css">
+</head>
+    <body>
+        <h1>Information Security Awareness Survey</h1>
+        <form action="Lab5.php" method="post">
+            <ol>
+                <li>
+                    <h4>Demographic Information</h4>
+                    <p>Gender:</p><select size="1" name="gender">
+                        <option value="male">male</option>
+                        <option value="female">Female</option>
+                        <option value="prefer not to say">Prefer not to say</option>
+                    </select>
+                    <br>
+                    <p>Age:</p><input type="number" name="age" min="1" value="1">
+                    <br>
+                    <p>Level:</p><select size="1" name="level">
+                        <option value="">Choose your level at GGC</option>
+                        <option value="freshman">Freshman</option>
+                        <option value="sophomore">Sophomore</option>
+                        <option value="junior">Junior</option>
+                        <option value="senior">Senior</option>
+                    </select>
+                    <br>
+                    <p>School:</p><input type="text" name="school" list="schoolList">
+                    <datalist id="schoolList">
+                        <option value="sst">sst</option>
+                        <option value="sb">sb</option>
+                        <option value="se">se</option>
+                        <option value="sla">sla</option>
+                    </datalist>
+                </li>
+                <li>
+                    <h4>Have Your Computers been infected by a virus before?</h4>
+                    <input type="radio" name="virus" value="yes">yes &nbsp;<input type="radio" name="virus" value="no">No
+                </li>
+                <li>
+                    <h4>What anti virus software do you usually use? (you can pick more than one answers)?</h4>
+                    <input type="checkbox" name="norton" value="Norton">Norton <input type="checkbox" name="mcafee" value="McAfee">McAfee<input type="checkbox" name="kasperski" value="Kasperski">Kasperski <br>
+                    <input type="checkbox" name="avg" value="AVG">AVG <input type="checkbox" name="malwarebytes" value="Malwarepytes">Malwarebytes<input type="checkbox" name="avast" value="Avast">Avast
+                </li>
+                <li>
+                    <h4>Please rate the following from strongly disagree to strongly agree:</h4>
+                    <table>
+                        <tr id="grey">
+                            <th>Questions</th><th>Strongly Disagree</th><th>Disagree</th><th>Neutral</th><th>Agree</th><th>Strongly Agree</th>
+                        </tr>
+                        <tr>
+                            <td>I know how to create a strong password</td>
+                            <td><input type="radio" name="question1" value="Strongly Disagree"></td>
+                            <td><input type="radio" name="question1" value="Disagree"></td>
+                            <td><input type="radio" name="question1" value="Neutral"></td>
+                            <td><input type="radio" name="question1" value="Agree"></td>
+                            <td><input type="radio" name="question1" value="Strongly Agree"></td>
+                        </tr>
+                        <tr id="grey">
+                            <td>I know how to remove malware from my computer</td>
+                            <td><input type="radio" name="question2" value="Strongly Disagree"></td>
+                            <td><input type="radio" name="question2" value="Disagree"></td>
+                            <td><input type="radio" name="question2" value="Neutral"></td>
+                            <td><input type="radio" name="question2" value="Agree"></td>
+                            <td><input type="radio" name="question2" value="Strongly Agree"></td>
+                        </tr>
+                        <tr>
+                            <td>I know how to protect my personal information when surfing the Internet</td>
+                            <td><input type="radio" name="question3" value="Strongly Disagree"></td>
+                            <td><input type="radio" name="question3" value="Disagree"></td>
+                            <td><input type="radio" name="question3" value="Neutral"></td>
+                            <td><input type="radio" name="question3" value="Agree"></td>
+                            <td><input type="radio" name="question3" value="Strongly Agree"></td>
+                        </tr>
+                    </table>
+                </li>
+            </ol>
+            <input type="submit">
+            <input type="reset">
+        </form>
+    </body>
+</html>

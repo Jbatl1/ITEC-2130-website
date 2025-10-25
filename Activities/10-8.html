@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>10-8</title>
+        <style>
+            th {
+                text-align: right;
+            }
+            fieldset, textarea{
+                width: 400px;
+                border: 2px ridge #eaeaea;
+                padding: 10px;
+            }
+            legend {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>IT Student Association Registration</h1>
+        <form method="post" action="10-8.php">
+            <fieldset>
+                <legend>Personal Information</legend>
+            <table>
+                <tr><th>*Student ID:</th> <td><input type="text" placeholder="E.g. 900######" name="id" required="required"> </td></tr>
+                <tr><th>*Password:</th> <td><input type="password" placeholder="Choose a strong password" name="password1" required="required"> </td></tr>
+                <tr><th>*Retype Password:</th> <td><input type="password" placeholder="Password must match" name="password2" required="required"> </td></tr>
+                <tr><th>First Name:</th> <td><input type="text" placeholder="E.g. John" name="fName"> </td></tr>
+                <tr><th>Last Name:</th> <td><input type="text" placeholder="E.g. Doe" name="lName"> </td></tr>
+                <tr><th>*Email:</th> <td><input type="email"  placeholder="E.g. jdoe@ggc.edu" name="email" required="required"> </td></tr>
+                <tr><th>Phone:</th> <td><input type="text" placeholder="E.g. 888-888-8888" name="phone"> </td></tr>
+                <tr><th>Level:</th> <td> <select size="1" name="level">
+                    <option value="">Choose your level at GGC</option>
+                    <option value="freshman">Freshman</option>
+                    <option value="sophomore">Sophomore</option>
+                    <option value="junior">Junior</option>
+                    <option value="senior">Senior</option>
+                </select> </td></tr>
+            </table>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>IT References</legend>
+                <label><input type="checkbox" name="computer" value="yes">I own a computer.</label><br><br>
+
+
+
+                What is your favorite web browser?<br>
+                <label><input type="checkbox" value="edge" name="edge">Edge</label><br>
+                <label><input type="checkbox" value="firefox" name="firefox">Firefox</label><br>
+                <label><input type="checkbox" value="chrome" name="chrome">Chrome</label><br>
+                <label><input type="checkbox" value="safari" name="safari">Safari</label><br>
+                <br>
+                What is your favorite computer brand?<br>
+                <label><input type="radio" name="brand" value="mac">Mac</label><br>
+                <label><input type="radio" name="brand" value="dell">Dell</label><br>
+                <label><input type="radio" name="brand" value="hp">HP</label><br>
+                <label><input type="radio" name="brand" value="lenovo">Lenovo</label><br>
+                <br>
+                What is your major concentration? <br>
+                <select size="5" name="conc">
+                    <option value="digital media">Digital Media</option>
+                    <option value="data analytics">Data Analytics</option>
+                    <option value="enterprise systems">Enterprise Systems</option>
+                    <option value="software dev">Software Dev</option>
+                    <option value="systems and cybersecurity">Systems and Cybersecurity</option>
+                </select>
+                
+            </fieldset>
+            <br>    
+            <input type="submit"> 
+            <input type="reset"> 
+        </form>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>10-10</title>
+    </head>
+    <body>
+        <h1>Servey</h1>
+        <form method="post" action="10-10.php">
+            <h3>What is your favorite website?</h3>
+            website: <input type="url" name="website">
+
+            <h3>What is your favorite color?</h3>
+            Choose a color: <input type="color" name="color1">
+
+            <h3>What is your least favorite color?</h3>
+            Choose a color: <input type="color" name="color2">
+
+
+            <h3>What is your favorite day?</h3>
+            Choose a day: <input type="date" name="day">
+
+            <h3>What is your height?</h3>
+            Choose your height: 
+            <input type="number" min="0" max="7" value="5" name="feet"> feet.
+            <input type="number" min="0" max="11" name="inches"> inches.
+            <h3>How are you satisfied with this website?</h3>
+            Choose a score between 1 and 100: <br>
+            1<input type="range" min="1" max="100" name="score"> 100 <br>
+            <h3>Your opinion about classes:</h3>
+            <table border="1">
+                <tr>
+                    <td>I like classes starting at 8am.</td>
+                    <td><label><input type="radio" name="8am" value="agree">Agree</label></td>
+                    <td><label><input type="radio" name="8am" value="neutral">Neutral</label></td>
+                    <td><label><input type="radio" name="8am" value="disagree">Disagree</label></td>
+                </tr>
+                <tr>
+                    <td>I like evening classes.</td>
+                    <td><label><input type="radio" name="evening" value="agree">Agree</label></td>
+                    <td><label><input type="radio" name="evening" value="neutral">Neutral</label></td>
+                    <td><label><input type="radio" name="evening" value="disagree">Disagree</label></td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit">
+            <input type="reset">
+        </form>
+    </body>
+</html>

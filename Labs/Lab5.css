@@ -1,0 +1,18 @@
+li p {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+li h4 {
+    color: #0066ff;
+}
+#grey {
+    background-color: #d3d3d3;
+}
+tr {
+    text-align: center;
+}
+td {
+    min-width: 150px;
+}

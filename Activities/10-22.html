@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-22</title>
+</head>
+<body>
+    <script>
+        alert("Welcome to JavaScript!");
+        document.write("<h1>JavaScript 101</h1>")
+        document.write("<h2>Is JavaScript the same as Java?</h2>")
+    </script>
+    <button onclick="clickYes()">Yes</button>
+    <button onclick="clickNo()">No</button>
+    <br>
+    <script>
+        function clickYes() {
+            alert("No, they are different")
+        }
+        function clickNo() {
+            alert("Yes, they are different")
+        }
+    </script>
+
+    <h2>Sample code:</h2>
+    <img id="myImage" src="../Images/JavaScript.jpg" style="width: 300px; height: 200px;"><br>
+    <button onclick="document.getElementById('myImage').src = '../Images/JavaScript.jpg'">JavaScript</button>
+    <button onclick="document.getElementById('myImage').src = '../Images/Java.png'">Java</button>
+
+    <h2>Hande Events</h2>
+    <img src="../Images/tryJavaScript.jpg" onmouseover="bigImg(this)" onmouseout="normalImg(this)"><br>
+    <script>
+        function bigImg(obj) {
+            obj.style.width = "440px"
+            obj.style.height = "520px"
+            obj.style.transition = "width 2s, height 2s"
+        }
+        function normalImg(obj) {
+            obj.style.width = "220px"
+            obj.style.height = "260px"
+            obj.style.transition = "width 2s, height 5s"
+        }
+    </script>
+
+    <h2 onmouseover="changeColor(this, 'red')" onmouseout="changeColor(this, 'green')">Javascript is fun!</h2>
+    <script>
+        function changeColor(obj, newColor) {
+            obj.style.color=newColor;
+        }
+    </script>
+    <h3>
+        This page was last modified on: 
+        <script>
+            document.write(document.lastModified);
+        </script>
+    </h3>
+ </body>
+</html>
