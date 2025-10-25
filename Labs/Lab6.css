@@ -7,6 +7,9 @@ main img {
     display: block;
     margin: auto;
 }
+#witch {
+    width: 300px;
+}
 h1 {
     text-align: center;
     font-size: 4em;
@@ -23,11 +26,13 @@ h3 {
     color: white;
 }
 #buttonContainer {
+    margin-top: 10px;
     text-align: center;
 }
 button {
-    width: 40px;
-    height: 15px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
 }
 #pumpkin {
     background-size: contain;
