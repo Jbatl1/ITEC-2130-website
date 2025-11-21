@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>11-7</title>
+</head>
+<body>
+<canvas id="myCanvas" width = "200" height="650" style="border: 1px solid #000000">
+</canvas>
+<script>
+let canv = document.getElementById("myCanvas");
+let ctx = canv.getContext("2d");
+//draw a square/rectangle
+ctx.fillstyle = "red";
+//fillRect (x0, yo, width, hight);
+ctx.fillRect(100, 0, 100, 100);
+//draw Linos
+ctx.moveTo (120,20);
+ctx. lineto (180, 50);
+ctx.stroke();
+CIx.moveTo (180, 20);
+ctx. LineTo(120, 50);
+ctx.stroke();
+//draw an arc
+//arc(x,y,r,sAngle,eAngle)
+ctx.beginPath();
+ctx.arc (150, 50, 35, 0.2*Math.PI, 0.8*Math.PI);
+ctx.stroke();
+//draw a piece of pie
+ctx.beginPath();
+ctx.arc(0, 0, 50, 0, Math.PI);
+ctx.fillStyle = "yellow";
+ctx.fill();
+//createLinearGradient (x0,y0,x1,y1)
+
+let grd = ctx.createLinearGradient(0, 120, 200,120);
+grd.addColorStop (0, "red");
+grd.addColorStop(0.5, "purple");
+grd.addColorStop(0.75, "pink");
+grd.addColorStop (1, "yellow");
+ctx.fillStyle = grd;
+ctx.fillRect(0, 120, 200, 80);
+
+let grd1 = ctx.createLinearGradient(0, 220, 200, 300);
+grdl.addColorStop (0, "red");
+grdl.addColorStop(0.5, "purple");
+grdl.addColorStop(0.75, "pink");
+grdl.addColorStop (1, "yellow");
+ctx.fillStyle = grd1;
+ctx.fillRect(0,220,200,80);
+
+let grd2 = ctx.createLinearGradient(0,320,0,400);
+grd2.addColorStop (0, "red");
+grd2.addColorStop(0.5,"purple");
+grd2.addColorStop(0.75,"pink");
+grd2.addColorStop (1, "yellow");
+ctx.fillStyle = grd2;
+ctx.fillRect(0,320,200,80);
+//createRadialGradient (x0,y0, r0,x1,y1, r2)
+
+let grd3 = ctx.createRadialGradient(100, 460, 5, 100, 460, 30);
+grd3.addColorStop (0, "red");
+grd3.addColorStop (1, "white");
+ctx.fillStyle = grd3;
+ctx.fillRect(0,420,200,80);
+//add text
+ctx.font = "30px Arial";
+ctx.fillStyle = "red"; ctx.fillText("Hello World", 10,540);
+ctx.strokeStyle = grd;
+ctx.strokeText("Hello World", 10, 580);
+
+let grd4 = ctx.createLinearGradient(0,600,0,620);
+grd4.addColorStop (0, "red");
+grd4.addColorStop(0.5,"purple");
+grd4.addColorStop(0.75,"pink");
+grd4.addColorStop (1, "yellow");
+ctx.strokeStyle = "red";
+ctx.strokeText("Hello World", 10, 620);
+ctx.fillStyle = grd4;
+ctx.fillText("Hello World", 10, 620);
+</script>
+</body>
+</html>

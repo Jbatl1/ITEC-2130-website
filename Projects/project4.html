@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Elkhorn City, Kentucky — A Cozy Mountain Town</title>
+  <!-- jQuery must load before any script that uses $ -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#2b7a78;--muted:#666}
+    html,body{height:100%;margin:0;font-family:Nunito,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{
+      background-image: url('https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1600&q=70');
+      background-size:cover; background-position:center center; color:#111;
+    }
+    .wrap{backdrop-filter: blur(6px); background: rgba(255,255,255,0.88); margin:30px; border-radius:12px; display:grid; grid-template-columns:260px 1fr; gap:20px; padding:18px}
+    nav{position:sticky; top:24px}
+    nav .menu{background:#fff;border-radius:10px;padding:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+    nav a{display:block;padding:10px 8px;color:var(--accent);text-decoration:none;border-radius:6px;margin-bottom:6px;font-weight:600}
+    nav a:hover{background:linear-gradient(90deg, rgba(43,122,120,0.08), rgba(43,122,120,0.04))}
+    main{padding:8px}
+    h1{margin:0 0 6px;font-size:28px;color:var(--accent)}
+    section{margin-bottom:20px}
+    .card{padding:12px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);background:linear-gradient(180deg,#fff,#fbfbff)}
+    .reveal p{display:none;padding:8px 0;margin:0}
+    .photo-bar{overflow:hidden;border-radius:10px}
+    .photo-bar img{width:100%;display:block}
+    .photo-controls{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+    .btn{background:var(--accent);color:white;padding:8px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
+    .activity-grid{display:flex;gap:12px;flex-wrap:wrap}
+    .activity{flex:1 1 180px;padding:12px;border-radius:10px;min-width:160px;background:linear-gradient(180deg,#fff,#f7fbff);text-align:center}
+    .activity img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+    .pulse{animation:pulse 2.4s infinite}
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+    .restaurants{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .rest{padding:10px;border-radius:10px}
+    .rest img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+    .restaurants img{transition:transform .25s ease,filter .25s ease}
+    #gallery img{transition:transform .25s ease,filter .25s ease}
+    footer{font-size:13px;text-align:center;color:var(--muted);padding:10px}
+    .snow{pointer-events:none;position:fixed;inset:0;z-index:0}
+    .snow i{position:absolute;width:6px;height:6px;background:rgba(255,255,255,0.9);border-radius:50%;opacity:0.9;animation:fall linear infinite}
+    @keyframes fall{0%{transform:translateY(-10vh);opacity:0}10%{opacity:1}100%{transform:translateY(110vh);opacity:0}}
+    @media (max-width:900px){.wrap{grid-template-columns:1fr;padding:12px}nav{order:2}.snow{display:none}}
+    /* floating zoom clone */
+    .zoom-clone{
+      position:fixed;
+      top:50%; left:50%;
+      transform:translate(-50%, -50%);
+      z-index:9999;
+      border-radius:12px;
+      box-shadow:0 12px 28px rgba(0,0,0,0.25);
+      transition:width .25s ease, opacity .25s ease, transform .25s ease;
+      pointer-events:none;
+      opacity:0;
+      width:0;
+      height:auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav>
+      <div class="menu card">
+        <h3 style="margin:0 0 8px;color:var(--accent)">Menu</h3>
+        <a href="#intro">Introduction</a>
+        <a href="#location">Location</a>
+        <a href="#weather">Weather</a>
+        <a href="#history">History</a>
+        <a href="#activities">Activities</a>
+        <a href="#restaurants">Restaurants</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+    </nav>
+
+    <main>
+      <header class="card" style="margin-bottom:12px">
+        <h1>Welcome to Elkhorn City, Kentucky</h1>
+        <p style="margin:6px 0 0;color:var(--muted)">A small mountain community with big Appalachian heart.</p>
+      </header>
+
+      <section id="intro" class="card reveal">
+        <h2>Introduction</h2>
+        <div class="controls" style="margin-bottom:10px">
+          <button class="btn toggle-section" data-target="#intro">Toggle Introduction</button>
+        </div>
+        <div class="content">
+          <p><strong>Elkhorn City</strong> sits tucked into the rugged hills of eastern Kentucky. It’s known for its peaceful mountain views, local friendliness, and outdoor recreation.</p>
+          <p>The town is a hub for nearby trails, creeks, and family-friendly events — perfect for a cozy weekend or longer stay.</p>
+          <p>Throughout the year it hosts small community gatherings, seasonal festivals, and traditions that keep Appalachian culture alive.</p>
+        </div>
+      </section>
+
+      <section id="location" class="card">
+        <h2>Location</h2>
+        <div class="photo-controls">
+          <button id="togglePhoto" class="btn">Toggle Photo Bar</button>
+          <button id="slideUp" class="btn">Slide Up Photo</button>
+          <button id="slideDown" class="btn">Slide Down Photo</button>
+        </div>
+        <div class="photo-bar" id="photoBar" style="display:none">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=60" alt="Elkhorn mountains"/>
+        </div>
+        <p style="margin-top:10px">Elkhorn City sits in Pike County, near the Virginia border. The surrounding landscape is typical Appalachian ridgelines, deep hollows, and winding creeks.</p>
+      </section>
+
+      <section id="weather" class="card reveal">
+        <h2>Weather</h2>
+        <div class="controls" style="margin-bottom:10px">
+          <button class="btn toggle-section" data-target="#weather">Toggle Weather</button>
+        </div>
+        <div class="content">
+          <p>Summers are warm and pleasant, with lots of green hills and shaded trails to explore.</p>
+          <p>Winters can bring snow to the ridges — creating photogenic scenes of snowfall on the mountains and opportunities for brisk walks and hot cocoa.</p>
+          <p>Spring and fall are ideal: cool mornings, colorful foliage in autumn, and wildflowers in spring.</p>
+        </div>
+      </section>
+
+      <section id="history" class="card reveal">
+        <h2>History</h2>
+        <div class="controls" style="margin-bottom:10px">
+          <button class="btn toggle-section" data-target="#history">Toggle History</button>
+        </div>
+        <div class="content">
+          <p>Elkhorn City's history is rooted in Appalachian life: timber, small-scale mining, and river-based travel shaped the community.</p>
+          <p>Generations of families have passed down crafts, music, and recipes that make up the cultural fabric of the town.</p>
+          <p>Today the town celebrates that heritage while welcoming visitors who want to experience the region gently and respectfully.</p>
+        </div>
+      </section>
+
+      <section id="activities" class="card">
+        <h2>Activities &amp; Events</h2>
+        <div class="activity-grid">
+          <div class="activity pulse card">
+            <img src="https://images.unsplash.com/photo-1542395970-56f9f2af56b5?auto=format&fit=crop&w=900&q=60" alt="sledding"/>
+            <h4>Sledding</h4>
+            <p style="font-size:13px">When snow falls, small hills become joyful sledding spots for families.</p>
+          </div>
+
+          <div class="activity pulse card">
+            <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=900&q=60" alt="bonfire"/>
+            <h4>Bonfires</h4>
+            <p style="font-size:13px">Local get-togethers often feature bonfires, music, and marshmallows.</p>
+          </div>
+
+          <div class="activity pulse card">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=60" alt="family"/>
+            <h4>Family Time</h4>
+            <p style="font-size:13px">Parks and picnic spots make the town ideal for family outings.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="restaurants" class="card">
+        <h2>Recommended Restaurants</h2>
+        <p style="margin:6px 0 12px;color:var(--muted)">Local picks with charm — animated for fun!</p>
+        <div class="restaurants">
+          <div class="rest card" id="rest1">
+            <img src="https://images.unsplash.com/photo-1548365328-7ec3b1c6f1be?auto=format&fit=crop&w=900&q=60" alt="pizza"/>
+            <h4>Time Out Pizza</h4>
+            <p>Classic local pizza, good for families and groups.</p>
+            <button class="btn go" data-name="Time Out Pizza">Visit</button>
+          </div>
+
+          <div class="rest card" id="rest2">
+            <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=900&q=60" alt="snack shack"/>
+            <h4>Snach Shack</h4>
+            <p>A cozy spot for quick bites; local favorite for sandwiches and snacks.</p>
+            <button class="btn go" data-name="Snach Shack">Visit</button>
+          </div>
+
+          <div class="rest card" id="rest3">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=60" alt="subway-sandwich"/>
+            <h4>Subway</h4>
+            <p>Fast, familiar sandwiches — handy for a grab-and-go meal.</p>
+            <button class="btn go" data-name="Subway">Visit</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="card">
+        <h2>Gallery</h2>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=60" style="width:32%;border-radius:8px" alt="mountain"/>
+          <img src="https://images.unsplash.com/photo-1515484702312-6c3b9d2a9a1b?auto=format&fit=crop&w=600&q=60" style="width:32%;border-radius:8px" alt="creek"/>
+          <img src="https://images.unsplash.com/photo-1516762689617-49f3b1f1a3f1?auto=format&fit=crop&w=600&q=60" style="width:32%;border-radius:8px" alt="trail"/>
+        </div>
+      </section>
+
+      <footer class="card">Made with ❤️ — Replace the images with local photos if you have them.</footer>
+    </main>
+  </div>
+
+  <script>
+    // SAFETY: ensure jQuery is available
+    if(typeof $ === 'undefined'){
+      console.error('jQuery is not loaded. Make sure internet access allows CDN scripts.');
+    }
+
+    // Populate simple snowfall elements
+    (function makeSnow(){
+      const container = document.querySelector('.snow');
+      if(!container) return;
+      const count = Math.min(80, Math.round(window.innerWidth/10));
+      for(let i=0;i<count;i++){
+        const el = document.createElement('i');
+        const left = Math.random()*100;
+        const delay = Math.random()*-20;
+        const duration = 8 + Math.random()*18;
+        const size = 4 + Math.random()*8;
+        el.style.left = left + '%';
+        el.style.width = size+'px'; el.style.height = size+'px';
+        el.style.top = (Math.random()*-20) + 'vh';
+        el.style.animationDuration = duration + 's';
+        el.style.animationDelay = delay + 's';
+        container.appendChild(el);
+      }
+    })();
+
+    // toggle (reveal/hide) paragraphs inside a specific section
+    function toggleSection($section){
+      if(!$section || !$section.length) return;
+      const $paras = $section.find('.content p');
+      if($paras.length === 0) return;
+      if($paras.first().is(':hidden')){
+        $paras.each(function(i){ $(this).delay(i*200).slideDown(300); });
+      } else {
+        $paras.slideUp(300);
+      }
+    }
+
+    // reveal an entire section (used by the 'Reveal All' button)
+    function revealSection($section){
+      const $paras = $section.find('.content p');
+      $paras.each(function(i){ $(this).delay(i*700).slideDown(500); });
+    }
+
+    // create floating zoom clone element
+    const zoomClone = document.createElement('img');
+    zoomClone.className = 'zoom-clone';
+    document.body.appendChild(zoomClone);
+    function activateZoom(src){
+      zoomClone.src = src;
+      // set width to 25% of viewport (25vw)
+      zoomClone.style.width = '25vw';
+      zoomClone.style.opacity = 1;
+      zoomClone.style.transform = 'translate(-50%, -50%) scale(1)';
+    }
+    function deactivateZoom(){
+      zoomClone.style.opacity = 0;
+      zoomClone.style.width = '0';
+    }
+
+    // main DOM-ready handlers
+    $(function(){
+      // Left nav smooth scroll
+      $('nav a').on('click', function(e){
+        e.preventDefault();
+        const target = $($.attr(this,'href'));
+        if(target.length) $('html,body').animate({scrollTop: target.offset().top - 20}, 600);
+      });
+
+      // individual toggle buttons
+      $('.toggle-section').on('click', function(){
+        const target = $(this).data('target');
+        toggleSection($(target));
+      });
+
+      // reveal All button
+      $('#revealAll').on('click', function(){
+        const sections = $('.reveal');
+        sections.each(function(i){
+          const $s = $(this);
+          setTimeout(function(){ revealSection($s); }, i*900);
+        });
+      });
+
+      // photo bar controls
+      $('#togglePhoto').on('click', function(){ $('#photoBar').slideToggle(450); });
+      $('#slideUp').on('click', function(){ $('#photoBar').slideUp(450); });
+      $('#slideDown').on('click', function(){ $('#photoBar').slideDown(450); });
+
+      // restaurant buttons animate a quick highlight
+      $('.go').on('click', function(){
+        const name = $(this).data('name');
+        const $card = $(this).closest('.rest');
+        $card.css('opacity',0.95);
+        if($.fn.effect){ $card.effect('bounce',{times:2},300); }
+        else { $card.animate({marginTop:'-6px'},150).animate({marginTop:'0px'},150); }
+        setTimeout(function(){ $card.css('opacity',''); },600);
+        alert('Recommended: '+name+' — try their local favorites!');
+      });
+
+      // hover to activate zoom clone (restaurants and gallery)
+      const selector = '.restaurants img, #gallery img';
+      $(document).on('mouseenter', selector, function(){ activateZoom(this.src); });
+      $(document).on('mouseleave', selector, function(){ deactivateZoom(); });
+
+      // accessibility: make paragraphs focusable
+      $('.reveal .content p').attr('tabindex','0');
+    });
+  </script>
+</body>
+</html>

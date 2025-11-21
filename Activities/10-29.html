@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-29</title>
+</head>
+<body>
+    <script>
+            let userName = prompt("Please enter your name: ");
+            document.write("<h2>Hello " + userName + "<h2>");
+
+            let userColor = prompt(userName + ", What color do you like for the background of the web page?");
+            document.bgColor = userColor;
+            userColor = prompt(userName + ", What color do you like for the font of the web page?");
+            document.fgColor = userColor;
+            
+            let score = prompt(userName + ", Please enter your test 2 score: ");
+            if (score >= 90) {
+                document.write("<h3>" + userName + ", you got an A on test 2!</h3>")
+            }
+            else if (score >= 80) {
+                document.write("<h3>" + userName + ", you got a B on test 2!</h3>")
+            }
+            else if (score >= 70) {
+                document.write("<h3>" + userName + ", you got a C on test 2!</h3>")
+            }
+            else if (score >= 60) {
+                document.write("<h3>" + userName + ", you got a D on test 2!</h3>")
+            }
+            else {
+                document.write("<h3>" + userName + ", you failed test 2!</h3>")
+            }
+    </script>
+
+    <h2>Select a test to take:</h2>
+    <input type="button" value="Easy" onclick="easyTest()">
+    <input type="button" value="Medium" onclick="mediumTest()">
+    
+    <script>
+        function easyTest() {
+            var number = prompt("What is 5 + 5?");
+            if (parseInt(number) == 10)
+                alert("Correct!")
+            else
+                alert("Wrong!")
+        }
+
+        function mediumTest() {
+            var number1 = prompt("Enter a number: ");
+            var number2 = prompt("Enter a number: ");
+            var answer = prompt("What is " + number1 + " * " + number2 + "?")
+            if (parseInt(answer) == parseInt(number1) * parseInt(number2))
+                alert("Correct!")
+            else
+                alert("Wrong!")
+        }
+
+    </script>
+</body>
+</html>

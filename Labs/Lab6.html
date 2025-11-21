@@ -8,17 +8,57 @@
 </head>
     <body>
         <main>
-            <h1>Happy Halloween!!!</h1>
-            <img id="witch" src="../Images/witch.png" alt="">
-            <h2>Trick or treat?</h2>
-            <img src="../Images/trickOrTreat.jpg" alt="">
+            <div id="witchDiv">
+                <h1>Happy Halloween!!!</h1>
+                <img id="witch" src="../Images/witch.png" alt="">
+                <h2>Trick or treat?</h2>
+            </div>
+             <img id="myImage" src="../Images/trickOrTreat.jpg" style="width: 300px; height: 200px;"><br>
             <div id="buttonContainer">
-                <button>Trick</button>
-                <button>Treat</button>
-                <script></script>
+                <button onclick="document.getElementById('myImage').src = '../Images/trick.jpg'">Trick</button>
+                <button onclick="document.getElementById('myImage').src = '../Images/treat.jpg'">Treat</button>
+                <input type="submit" name="" id="" size="20">
             </div>
             <h3>I got my favorite candy!</h3>
-            <img src="../Images/candy.png" alt="">
+            <div id="kitkat"></div>
+            <img id="bouncekin" src="../Images/pumpkin.png" alt="pumpkin">
+            <script>
+                const dvd = document.getElementById("bouncekin");
+
+                let x = 100;
+                let y = 100;
+
+                let dx = 3;
+                let dy = 3;
+
+                function animate() {
+                const rect = dvd.getBoundingClientRect();
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+
+                x += dx;
+                y += dy;
+
+                if (x + rect.width >= width || x <= 0) {
+                    dx = -dx;
+                    rotate();
+                }
+                if (y + rect.height >= height || y <= 0) {
+                    dy = -dy;
+                    rotate();
+                }
+
+                dvd.style.transform = `translate(${x}px, ${y}px) rotate(${angle}deg)`;
+                requestAnimationFrame(animate);
+                }
+
+                let angle = 0;
+                function rotate() {
+                angle += 90;
+                }
+
+                animate();
+            </script>
             <div id="pumpkin"></div>
         </main>
     </body>

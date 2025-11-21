@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello, Winter</title>
+  <style>
+   body {
+    text-align: center;
+     background-color: #e0e0ff;
+        font-family: Arial, sans-serif;
+    }
+     canvas {
+      border: 1px solid #ccc; 
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // --- Sky background ---
+    ctx.fillStyle = "#9999ff";
+    ctx.fillRect(0, 0, 400, 400);
+
+    // --- Sun ---
+    ctx.beginPath();
+    ctx.arc(0, 0, 90, 0, Math.PI * 2);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+
+    // --- Ground ---
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 350, 400, 50);
+
+    // --- Snowman body ---
+    ctx.beginPath();
+    ctx.arc(190, 325, 100, 0, Math.PI * 2);
+    ctx.fillStyle = "white";
+    ctx.fill();
+
+    // --- Snowman head ---
+    ctx.beginPath();
+    ctx.arc(190, 170, 70, 0, Math.PI * 2);
+    ctx.fill();
+
+    // --- Eyes ---
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+    ctx.arc(165, 160, 8, 0, Math.PI * 2);
+    ctx.arc(215, 160, 8, 0, Math.PI * 2); 
+    ctx.fill();
+
+    // --- Mouth ---
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.arc(190, 180, 30, Math.PI * 0.2, Math.PI * 0.8, false);
+    ctx.fill();
+
+    // --- Buttons ---
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+    ctx.arc(190, 270, 8, 0, Math.PI * 2);
+    ctx.arc(190, 320, 8, 0, Math.PI * 2); 
+    ctx.fill();
+
+    // --- Arms ---
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    // Left arm
+    ctx.moveTo(110, 280); 
+    ctx.lineTo(50, 170); 
+    // Right arm
+    ctx.moveTo(270, 280); 
+    ctx.lineTo(350, 170); 
+    ctx.stroke();
+
+    // --- Top text: Hello, Winter  ---
+    const gradient = ctx.createLinearGradient(0, 20, 0, 70);
+    gradient.addColorStop(0, "Yellow");
+    gradient.addColorStop(1, "white");
+    ctx.fillStyle = gradient
+    ctx.font = "24px Arial";
+    ctx.textAlign = "center";
+    ctx.fillText("Hello, Winter", 200, 60); 
+
+    // --- Bottom text: ---
+    ctx.strokeStyle = "red";
+    ctx.font = "bold 16px Arial";
+    ctx.strokeText("by Caleb Butler", 200, 385);
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project 3</title>
+  <link rel="stylesheet" href="project3Gallery.css">
+</head>
+<body>
+
+    <canvas id="hyperspace"></canvas>
+
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="project3.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Media ▾</a>
+        <div class="dropdown-content">
+          <a href="project3.html#audio">Audio</a>
+          <a href="project3.html#video">Video</a>
+          <a href="project3.html#poster">Poster</a>
+        </div>
+      </li>
+      <li><a href="project3.html#information">Information</a></li>
+      <li><a href="project3.html#review">Review</a></li>
+    </ul>
+  </nav>
+
+  <header class="main-header">
+    <h1>Star Wars: Episode III – Revenge of the Sith</h1>
+    <p>Top 6 Cast Members</p>
+  </header>
+
+  <section class="cast‐grid">
+    <div class="cast-member">
+      <img src="../Images/obi.png" alt="Ewan McGregor">
+      <h3>Ewan McGregor</h3>
+      <p>Obi‑Wan Kenobi</p>
+    </div>
+
+    <div class="cast-member">
+      <img src="../Images/anakin.png" alt="Hayden Christensen">
+      <h3>Hayden Christensen</h3>
+      <p>Anakin Skywalker / Darth Vader</p>
+    </div>
+
+    <div class="cast-member">
+      <img src="../Images/padme.png" alt="Natalie Portman">
+      <h3>Natalie Portman</h3>
+      <p>Padmé Amidala</p>
+    </div>
+
+    <div class="cast-member">
+      <img src="../Images/palp.png" alt="Ian McDiarmid">
+      <h3>Ian McDiarmid</h3>
+      <p>Chancellor Palpatine / Darth Sidious</p>
+    </div>
+
+    <div class="cast-member">
+      <img src="../Images/mace.png" alt="Samuel L. Jackson">
+      <h3>Samuel L. Jackson</h3>
+      <p>Mace Windu</p>
+    </div>
+
+    <div class="cast-member">
+      <img src="../Images/count.png" alt="Christopher Lee">
+      <h3>Christopher Lee</h3>
+      <p>Count Dooku / Darth Tyranus</p>
+    </div>
+  </section>
+
+  <script>
+const canvas = document.getElementById('hyperspace');
+const ctx = canvas.getContext('2d');
+
+let stars = [];
+const numStars = 400;
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+// Initialize stars
+for (let i = 0; i < numStars; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    z: Math.random() * canvas.width,
+    speed: Math.random() * 0.5 + 0.2
+  });
+}
+
+function animate() {
+  ctx.fillStyle = 'black';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  for (let star of stars) {
+    star.z -= star.speed;
+    if (star.z <= 0) {
+      star.x = Math.random() * canvas.width;
+      star.y = Math.random() * canvas.height;
+      star.z = canvas.width;
+      star.speed = Math.random() * 0.5 + 0.2;
+    }
+
+    const sx = (star.x - canvas.width/2) * (canvas.width/star.z) + canvas.width/2;
+    const sy = (star.y - canvas.height/2) * (canvas.width/star.z) + canvas.height/2;
+    const radius = (canvas.width - star.z) / canvas.width * 2;
+
+    ctx.beginPath();
+    ctx.arc(sx, sy, radius, 0, Math.PI * 2);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+  }
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>
